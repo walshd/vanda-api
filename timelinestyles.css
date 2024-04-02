@@ -21,7 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /*Relative to position lines */
+    position: relative; 
     margin: 20px;
     width: 300px;
 }
@@ -29,9 +29,9 @@ body {
 .year-label {
     font-weight: bold;
     font-size: 1.2em;
-    position: relative; /* Position it above the line */
-    top: 0px; /* Adjust based on your layout */
-    background-color: #fff; /* Match background to hide line behind text */
+    position: relative; 
+    top: 0px; 
+    background-color: #fff; 
     padding: 0 5px;
 }
 
@@ -225,12 +225,12 @@ article div h1 {
     grid-template-rows: 20px 1fr;
 }
 
-.modelImage {
+#modalImage {
     grid-column: 1;
     grid-row: 2;
 }
 
-.modelInfo {
+#modalInfo {
     grid-column: 2;
     grid-row: 2;
 }
