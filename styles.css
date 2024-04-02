@@ -1,0 +1,51 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+
+#results { 
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Controls the space between items */
+    justify-content: space-around; /* Distributes space around items */
+}
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    width: 100%; /* Ensures ul spans the full width of its parent */
+}
+
+li {
+    display: flex; /* Aligns children (article) in a row */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 20px; /* Adds some space between list items */
+    border: solid 1px black;
+    padding: 5px;
+    flex-basis: 400px; /* Preferred width of the items */
+    flex-grow: 1; /* Allows items to grow to fill additional space */
+}
+
+article {
+    display: flex; /* Enables flexbox layout within article */
+    align-items: center; /* Aligns children vertically in the center */
+}
+
+article img {
+    margin-right: 20px; /* Adds space between the image and the text */
+    min-width: 150px;
+    max-width: 200px; /* Maximum width of the image */
+    max-height: 300px; /* Maximum height of the image */
+    height: auto; /* Ensures the height scales in proportion to the width */
+    width: auto; /* Ensures the width scales in proportion to the height */
+}
+
+article div {
+    display: flex;
+    flex-direction: column; /* Stacks the div children (text items) vertically */
+}
+
+article div h1 {
+    text-transform: uppercase;
+    margin: 0; /* Removes default margin to avoid overflow */
+}

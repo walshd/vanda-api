@@ -1,0 +1,253 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+
+::-webkit-scrollbar{
+    height: 25px;
+    background: #ccc;
+}
+::-webkit-scrollbar-thumb:horizontal{
+    padding-top: 4px;
+    background: #999;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:vertical{
+    background: #999;
+    border-radius: 10px;
+}
+
+
+.year-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /*Relative to position lines */
+    margin: 20px;
+    width: 300px;
+}
+
+.year-label {
+    font-weight: bold;
+    font-size: 1.2em;
+    position: relative; /* Position it above the line */
+    top: 0px; /* Adjust based on your layout */
+    background-color: #fff; /* Match background to hide line behind text */
+    padding: 0 5px;
+}
+
+.year-marker:before { /* Create the line */
+    content: '';
+    position: absolute;
+    left: 50%; /* Center the line below the year label */
+    top: -10px; /* Adjust based on layout */
+    bottom: 0;
+    width: 2px; /* Line thickness */
+    background-color: #e3e3e3; /* Line color */
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust minmax based on your item size */
+    gap: 10px; /* Space between items */
+    max-height: 100vh; /* Prevent vertical scrolling past screen height */
+    overflow-y: auto; /* Allow scrolling within the container if needed */
+    overflow-x: hidden;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    min-width: 1fr;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.item img {
+    display: block;
+    width: 50%;
+    min-width: 120px;
+    max-width: 150px;
+    max-height: 200px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.item p {
+    text-wrap:wrap;
+    max-width: 120px;
+    text-align: center;
+}
+
+
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    width: 100%; /* Ensures ul spans the full width of its parent */
+}
+
+li {
+    display: flex; /* Aligns children (article) in a row */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 20px; /* Adds some space between list items */
+    border: solid 1px black;
+    padding: 5px;
+    flex-basis: 400px; /* Preferred width of the items */
+    flex-grow: 1; /* Allows items to grow to fill additional space */
+}
+
+article {
+    display: flex; /* Enables flexbox layout within article */
+    align-items: center; /* Aligns children vertically in the center */
+}
+
+article img {
+    margin-right: 20px; /* Adds space between the image and the text */
+    min-width: 150px;
+    max-width: 200px; /* Maximum width of the image */
+    max-height: 300px; /* Maximum height of the image */
+    height: auto; /* Ensures the height scales in proportion to the width */
+    width: auto; /* Ensures the width scales in proportion to the height */
+}
+
+article div {
+    display: flex;
+    flex-direction: column; /* Stacks the div children (text items) vertically */
+}
+
+article div h1 {
+    text-transform: uppercase;
+    margin: 0; /* Removes default margin to avoid overflow */
+}
+#timelineContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timelineContainer section {
+    border-left: 2px solid #000;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+#timelineContainer img {
+    width: 100px;
+    height: auto;
+}
+
+/* #results {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px 0;
+    position: relative;
+} */
+#results {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap; /* Ensures inline or inline-block elements flow horizontally */
+}
+
+#searchForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+    
+}
+
+#searchForm #searchQuery {
+    width: 30%;
+    flex-basis: 1;
+    margin-right: 10px;
+}
+
+
+#results::-webkit-scrollbar {
+    /* height: 0px; Hide scrollbar for WebKit browsers */
+}
+
+.timeline-item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.year-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.timeline-item img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Modal pop up oced below */
+
+#itemModal {
+    z-index: 5;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 90%; /* Full width */
+    height: 90%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20px 1fr;
+}
+
+.modelImage {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.modelInfo {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

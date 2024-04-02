@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V&A Museum Search via API v2 - large item return</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- <script src="vanda-api.js"></script> -->
+</head>
+<body>
+    <h1>V&A Museum Search via API v2 - large item return</h1>
+    <h2>Search the V&A Museum Collection</h2>
+
+<!-- Search Form -->
+<form id="searchForm">
+    <input type="text" id="searchQuery" placeholder="Enter search term, e.g., jewellery" required>
+    
+    <select id="maxItemsSelect">
+        <option value="15">15 items</option>
+        <option value="50">50 items</option>
+        <option value="100">100 items</option>
+        <option value="200">200 items</option>
+      </select>
+
+      <button type="submit">Search</button>
+</form>
+
+<!-- Container for displaying search results -->
+<div id="results"></div>
+<div id="pagination"></div>
+
+<script src="vandaapiscript-100.js"></script>
+</body>
+</html>
