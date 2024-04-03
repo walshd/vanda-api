@@ -68,6 +68,7 @@ body {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #fff;
+    cursor: pointer;
 }
 
 .item img {
@@ -249,5 +250,23 @@ article div h1 {
 .close-button:focus {
     color: black;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.category-tile {
+    margin: 10px;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px;
+    text-align: center;
+    width: 200px; /* Fixed width for each tile */
     cursor: pointer;
 }

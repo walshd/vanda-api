@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V&A Museum Search via API v2 - Generous interface</title>
+    <link rel="stylesheet" type="text/css" href="timelinestyles.css">
+    <!-- <script src="vanda-api.js"></script> -->
+</head>
+<body>
+    <a href="timeline-preload.html"><h1>V&A Museum Search via API v2 - large item return</h1></a>
+    <h2>Search the V&A Museum Collection</h2>
+
+<!-- Search Form -->
+<form id="searchForm">
+    <input type="text" id="searchQuery" placeholder="Enter search term, e.g., jewellery" required>
+    
+    <!-- <select id="maxItemsSelect">
+        <option value="15">15 items</option>
+        <option value="50">50 items</option>
+        <option value="100">100 items</option>
+        <option value="200">200 items</option>
+      </select> -->
+
+      <button type="submit" id="searchSubmit">Search</button>
+</form>
+<!-- Container for the timeline -->
+<div id="dummyScrollContainer" style="overflow-x: auto; overflow-y: hidden;">
+    <div id="dummyScrollContent" style="height: 1px;"></div> <!-- This div's width will be adjusted via JS -->
+</div>
+<!-- <div id="timelineContainer"></div> -->
+<!-- Container for displaying search results -->
+<div id="results"></div>
+<div id="pagination"></div>
+
+<!-- Container for displaying categories as tiles -->
+<div id="categoriesContainer" class="categories-container"></div>
+
+
+<script src="vandaapiscript-timeline-preload.js"></script>
+</body>
+</html>
